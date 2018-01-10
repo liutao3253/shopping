@@ -1,0 +1,10 @@
+<!-- 轮播图 -->
+<swiper indicator-dots="{{indicatorDots}}" indicator-color="#eee" indicator-active-color="#F27171"circular="true"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+
