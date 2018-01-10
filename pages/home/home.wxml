@@ -8,3 +8,10 @@
   </block>
 </swiper>
 
+<!-- 选项卡 -->
+<view class='home_items'>
+  <view class='home_list' wx:for='{{itemsArr}}'>
+    <view><image mode="{{item.mode}}" src="{{item.src}}"></image></view>
+    <text>{{item.text}}</text>
+  </view> 
+</view>

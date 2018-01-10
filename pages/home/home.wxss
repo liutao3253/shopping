@@ -1,1 +1,21 @@
 /* pages/home/home.wxss */
+/* 轮播图 */
+.home_items{
+  display: flex;  
+  flex-wrap:wrap; 
+  flex-direction:row; 
+  flex-grow:3;
+  margin: 10px 0;
+}
+.home_list{ 
+  width: 25%;
+  text-align: center;
+  font-size: 10px;
+  color: #888;
+}
+.home_list wx-image{
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin: 10px 0 5px 0;
+}
