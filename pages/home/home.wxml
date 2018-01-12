@@ -1,17 +1,38 @@
-<!-- 轮播图 -->
-<swiper indicator-dots="{{indicatorDots}}" indicator-color="#eee" indicator-active-color="#F27171"circular="true"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+<!-- tab页 -->
+<view class="swiper-tab">  
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">首页</view>  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">最新</view>  
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">最热</view>  
+</view> 
+
+<!-- banner图 -->
+<swiper current="{{currentTab}}" class="banner-swiper" indicator-dots="{{indicatorDots}}" indicator-active-color="#F27171"circular="true"autoplay="{{autoplay}}">   
+    <swiper-item wx:for="{{banners}}" class='swiper-item'>
+      <navigator url='../detail/detail?id={{item.productId}}'>
+        <image src="{{item.image}}" class="slide-image"/>
+      </navigator> 
     </swiper-item>
-  </block>
-</swiper>
+</swiper>  
 
 <!-- 选项卡 -->
 <view class='home_items'>
   <view class='home_list' wx:for='{{itemsArr}}'>
-    <view><image mode="{{item.mode}}" src="{{item.src}}"></image></view>
+    <view class='img'><image mode="{{item.mode}}" src="{{item.src}}"></image></view>
     <text>{{item.text}}</text>
   </view> 
+</view>
+
+<!-- 新品上架 -->
+<view class='shelf-header'>
+  <view class='shelf-title'>
+    <text class='shelf-title-cn'>{{shelf.english_name}}new</text>
+    <text class='shelf-title-cn'>{{shelf.name}}新品上新</text>
+  </view>
+  <view class='shelf-more'>
+    <navigator url='../../list/list?id={{shelf.id}}' class='ifanrin-more-icon'>...</navigator>
+  </view>
+  <view class='shelf-item' wx:for='{{shelfNavList}}'>
+    <view class='img'><image mode="{{item.mode}}" src="{{item.cover_image}}"></image></view>
+    <text>{{item.title}}</text>
+  </view>
 </view>
