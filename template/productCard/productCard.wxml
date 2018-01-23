@@ -1,13 +1,10 @@
-<template name='productCard'>
-  <view class='product_card'>
-    <!-- <navigator url='../detail/detail?id={{id}'> -->
-    <navigator url=''>
-      <view style='background-image:url({{cover_image}}' class='product-price'>
-      </view>
-      <view>
-          <text class='product-title'>{{title}}</text>
-          <text class='product-price'>￥{{price}}</text>
-      </view>
+<!-- 搜索框 -->
+<template name='header'>
+  <view class='header'>
+    <view class='search-bar-container'>
+    <navigator url='' style='border-radius: 4rpx;background: #eeeff1;display: block;margin:18rpx 24rpx'>
+      <text style='font-size: 28rpx;color: #959595;margin-left:30rpx'>寻找称心玩物</text>
     </navigator>
+    </view>
   </view>
 </template>

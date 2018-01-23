@@ -6,7 +6,7 @@ var CONFIG = {
     // 分类
     CATEGORY_QUERY:'https://ifanr.in/api/v1.4/category/',
     SHELF_QUERY:'https://ifanr.in/api/v1.4/shelf/',
-    PRODUCT_LIST: 'https://ifanr.in/api/v1.4/shelf/'
+    PRODUCT_LIST: 'https://ifanr.in/api/v1.4/category/'
   }
 }
 module.exports = CONFIG

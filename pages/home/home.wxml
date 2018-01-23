@@ -1,38 +1,71 @@
-<!-- tab页 -->
-<view class="swiper-tab">  
-    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">首页</view>  
-    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">最新</view>  
-    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">最热</view>  
-</view> 
+<!-- 新人增品 -->
+<view class="{{show==1?'coupon-offer-modal--mask':'hidden'}}">
+  <view class='coupon-offer-modal'>
+    <image class="coupon-offer-modal__img" src="https://mcache.ifanr.cn/static/dongguan/dist/images/3b36174f.png"></image>
+    <view class='coupon-offer-btn'>点击领取</view>
+    <view class='close-modal-btn ifanrin-icon ifanrin-close' bindtap='close'></view>
+  </view>
+</view>
+
+
+
+
+
+<import src='../../template/productCard/productCard.wxml' />
+
 
 <!-- banner图 -->
-<swiper current="{{currentTab}}" class="banner-swiper" indicator-dots="{{indicatorDots}}" indicator-active-color="#F27171"circular="true"autoplay="{{autoplay}}">   
-    <swiper-item wx:for="{{banners}}" class='swiper-item'>
-      <navigator url='../detail/detail?id={{item.productId}}'>
-        <image src="{{item.image}}" class="slide-image"/>
-      </navigator> 
-    </swiper-item>
-</swiper>  
+<view class='banners'>
+   <!-- 搜索框 -->
+ <block>
+    <template is='header'/>
+  </block>
+  <swiper class="banner-swiper" circular="true"autoplay="{{autoplay}}"bindchange="intervalChange" >   
+      <swiper-item wx:for="{{banners}}" class='swiper-item'>
+        <navigator url='../detail/detail?id={{item.productId}}'style="background-image:url({{item.image}})" class="slide-image">
+          <!-- <image src="{{item.image}}" class="slide-image"/> -->
+        </navigator> 
+      </swiper-item>
+  </swiper> 
+  <!-- 计数器 -->
+    <view class='swiper-pagination' >
+      <text>{{currentTab}}/{{total}}</text>
+    </view>
+    
+</view>
+<block>
+  <view class='guarantee-list'>
+     <view wx:for='{{guaranteeList}}' class='text'> 
+      <text class='icon ifanrin-icon ifanrin-gougou'></text>
+      <text>{{item.text}}</text>
+     </view> 
+  </view>
+</block>
 
-<!-- 选项卡 -->
+<!-- 分类 -->
 <view class='home_items'>
-  <view class='home_list' wx:for='{{itemsArr}}'>
-    <view class='img'><image mode="{{item.mode}}" src="{{item.src}}"></image></view>
-    <text>{{item.text}}</text>
+  <view class='home_list' wx:for='{{category}}'>
+    <view class='img'><image mode="{{item.mode}}" src="{{item.cover_image}}"></image></view>
+    <text>{{item.name}}</text>
   </view> 
 </view>
 
 <!-- 新品上架 -->
 <view class='shelf-header'>
   <view class='shelf-title'>
-    <text class='shelf-title-cn'>{{shelf.english_name}}new</text>
-    <text class='shelf-title-cn'>{{shelf.name}}新品上新</text>
+    <text class='shelf-title-cn'style='text-decoration-line: underline;'>{{shelf.english}}</text>
+    <text class='shelf-title-cn'>{{shelf.text}}</text>
   </view>
   <view class='shelf-more'>
     <navigator url='../../list/list?id={{shelf.id}}' class='ifanrin-more-icon'>...</navigator>
   </view>
+</view>
+<view class='shelf-list'>
   <view class='shelf-item' wx:for='{{shelfNavList}}'>
-    <view class='img'><image mode="{{item.mode}}" src="{{item.cover_image}}"></image></view>
-    <text>{{item.title}}</text>
+    <view class='img' style="background-image:url({{item.cover_image}})">
+    <!-- <image src="{{item.cover_image}}"></image> -->
+    </view>
+    <view><text style='display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;'>{{item.name}}</text></view>
+    <view><text style='color:#777777;font-size:26rpx;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;'>{{item.english_name}}</text></view>
   </view>
 </view>

@@ -1,0 +1,6 @@
+/**app.wxss**/
+@import './template/productCard/productCard.wxss';
+
+page{
+  background: #EEEFF1;
+}

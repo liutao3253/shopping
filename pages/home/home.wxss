@@ -1,24 +1,69 @@
 /* pages/home/home.wxss */
-/* tab页 */
-.swiper-tab{  
-  width: 100%;  
-  text-align: center;  
-  line-height: 80rpx;
-}  
-.swiper-tab-list{  
-  font-size: 30rpx;  
-  display: inline-block;  
-  width: 33.33%;  
-  color: #777777;  
-}  
-.on{ 
-  color: #F27171;  
-  border-bottom: 5rpx solid #F27171;
-}  
-  
+.coupon-offer-modal--mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    background-color: hsla(0,0%,7%,.6);
+}
+.hidden{
+  display: none;
+  overflow: hidden;
+}
+.coupon-offer-modal{
+    width: 600rpx;
+    margin: 162rpx auto 0;
+}
+.coupon-offer-modal__img {
+    width: 100%;
+    height:440rpx;
+    margin-bottom: 76rpx;
+}
+.coupon-offer-btn {
+    width: 560rpx;
+    height: 96rpx;
+    line-height: 96rpx;
+    margin: 0 auto;
+    font-size: 30rpx;
+    color: #fff;
+    text-align: center;
+    background-color: #e23737;
+    border-radius: 4rpx;
+}
+.close-modal-btn {
+    margin: 64rpx auto;
+    width: 64rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    font-size: 36rpx;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.ifanrin-icon {
+    font-family: ifanrin!important;
+    font-size: 32rpx;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .4rpx;
+    -moz-osx-font-smoothing: grayscale;
+}
+.ifanrin-close:before {
+    content: "x";
+}
+
   /* banner */
+.banners{
+  overflow: hidden; 
+  position: relative;
+  height: 540rpx;
+}
 .banner-swiper{
-   height: 230px; 
+  height: 540rpx; 
   width: 100%; 
   overflow: hidden;
 }
@@ -29,11 +74,61 @@
 .swiper-item navigator{
   width: 100%;
   height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }   
 .swiper-item .slide-image{  
   width: 110%;
   height: 100%;
 }   
+/* 计数器 */
+.swiper-pagination{
+    display: inline-block;
+    padding: 0 10rpx;
+    width: auto;
+    height: 30rpx;
+    right: 24rpx;
+    line-height: 30rpx;
+    font-size: 22rpx;
+    color: #fff;
+    background-color: hsla(0,0%,7%,.2);
+    border-radius: 4rpx;
+    bottom: 16rpx;
+    position: absolute;
+}
+.guarantee-list{
+  width: 100%;
+  height:72rpx;
+  display: flex;
+  line-height: 72rpx;
+  margin-bottom: 20rpx;
+  background: white;
+}
+.guarantee-list .icon{
+    font-size: 24rpx;
+    color: #ec3826;
+    margin-right: 6rpx;
+}
+.ifanrin-icon {
+    font-family: ifanrin!important;
+    font-size: 32rpx;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .4rpx;
+    -moz-osx-font-smoothing: grayscale;
+}
+.ifanrin-gougou:before {
+    content: "\E630";
+}
+.text{
+    color: #959595;
+    text-align: center;
+    font-size: 24rpx;
+    width: 25%;
+}
+   
+
 
 
 /* 选项卡 */
@@ -43,9 +138,11 @@
   flex-direction:row; 
   flex-grow:3;
   margin: 10rpx 0;
+  padding-bottom: 20rpx;
+  background: white;
 }
 .home_list{ 
-  width: 25%;
+  width: 20%;
   text-align: center;
   font-size: 10px;
   color: #888;
@@ -67,7 +164,35 @@
 .shelf-header{
   display: flex;
   justify-content: space-between;
+  padding: 0 20rpx;
+  font-size: 30rpx;
+  margin: 30rpx 0;
 }
 .shelf-more{
   align-self: center;
 }
+.shelf-title-cn{
+  display: block;
+}
+.shelf-list{
+   display: flex; 
+  flex-wrap:wrap;   
+  font-size: 30rpx;
+}
+.shelf-item{
+   width: 46%; 
+   margin-left: 20rpx;
+   box-sizing: border-box;
+   overflow: hidden; 
+  
+}
+.shelf-item>.img{
+   /* overflow: hidden;  */
+  height: 200rpx;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+  /* .shelf-item>.img image{ 
+   transform: translateX(-150rpx);
+}  */
