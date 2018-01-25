@@ -8,12 +8,7 @@
 </view>
 
 
-
-
-
 <import src='../../template/productCard/productCard.wxml' />
-
-
 <!-- banner图 -->
 <view class='banners'>
    <!-- 搜索框 -->
@@ -41,6 +36,85 @@
      </view> 
   </view>
 </block>
+
+<!-- 新品上架 -->
+<block>
+  <view class='floor'>
+    <view class="floor-header clearfix"> 
+        <view class="floor-title">新品上架</view>         
+        <view class="visit-more"> 
+          <navigator url=''>查看全部</navigator>
+        </view>  
+    </view>
+
+      <!-- 触屏滑动 -->
+      <view>
+        <view class='product-list--horizontal'>
+          <view class='product-list row-nowrap'>
+            <view class='product-item' wx:for='{{shelf_preview}}'>
+              <navigator url='{{item.visit_url}}'>
+                <view class="product-image background-image"  style="background-image: url({{item.cover_image}})"></view>
+                <text class="product-name">{{item.title}}</text>
+                <view class="price-container"> 
+                  <text class="product-price">￥{{item.price}}</text> 
+                  <text class='original-price'>￥{{item.original_price}}</text> 
+                </view>
+                <view class="tags-container"> 
+                  <view class="price-tag"wx:if="{{item.tags.price}}">{{item.tags.price}}</view>  
+                </view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+</block>
+
+<!-- 玩命拼团 -->
+<block>
+  <view class='floor'>
+    <view class="floor-header clearfix"> 
+        <view class="floor-title">玩命拼团</view>         
+        <view class="visit-more"> 
+          <navigator url=''>查看全部</navigator>
+        </view>  
+    </view>
+ 
+   <view class='group-buying-list'>
+      <view class='group-buying-card clearfix' wx:for='{{activity_product}}'>
+      <navigator class="product-images background-image"  style="background-image: url({{item.sku_image}})"> </navigator>
+      <view class='group-buying-card--right'>
+        <text class="product-title">{{item.product_title}}</text>
+        <view class='group-buying-member clearfix'>
+          <view class='group-buying-member-list' wx:for='{{item.activity.group_buying_avatar}}'>
+            <view class="group-buying-member-item background-image" style="background-image: url({{item}})"></view>
+          </view>
+
+          <text class="product-sold-count" wx:if='{{item.activity.sold_count>10}}'>已团{{item.activity.sold_count}}件</text>
+          <text class="product-sold-count" wx:else>刚刚开团</text>
+        </view>
+        <view class='group-buying__original-price'>
+          单购价<text class="line-slash">¥ {{item.discount_price}}</text> 
+        </view>
+        <view class="group-buying__discount-price" >¥ {{item.activity.discount_price}}</view>
+        <view class="group-buying-btn">去开团</view>
+      </view>
+      </view>
+   </view> 
+  </view> 
+</block>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- 分类 -->
 <view class='home_items'>

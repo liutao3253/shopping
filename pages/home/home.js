@@ -21,6 +21,14 @@ Page({
     }, {
       'text': '全场包邮'
     }],
+    // 新品上市
+    shelf_preview:[],
+    // 玩命拼团
+    activity_product:[],
+
+
+
+
     // 分类
     category:[],
     // 新品上新
@@ -63,7 +71,53 @@ Page({
         'text': '极速退款'
     },{
         'text': '全场包邮'
-    }]
+    }],
+    // 新品上市
+      wx.request({
+        url: CONFIG.API_URL.SHELF_PREVIEW,
+        method: 'GET',
+        data: {
+          id__in: '170',
+          items_per_shelf:10,
+          order_by:'-priority',
+          order_by: '-id',
+          img_size:'small',
+          limit: 10,
+          page: 0,
+          offset: 0
+        },
+        success(res) {
+          if (res.statusCode == 200) {     
+            for(var index in res.data){
+              that.setData({
+                shelf_preview: res.data[index],
+              })
+            }
+          }
+        }
+      });
+    // 玩命拼团
+    wx.request({
+      url: CONFIG.API_URL.ACTIVITY_PRODUCT,
+      method: 'GET',
+      data: {
+        activity_type: 'group_buying',
+        limit: 2
+      },
+      success(res) {
+        if (res.statusCode == 200) {
+            that.setData({
+              activity_product: res.data.objects,
+            })
+        }
+      }
+    });
+
+
+
+
+
+
     // 分类
     wx.request({
       url: CONFIG.API_URL.CATEGORY_QUERY,

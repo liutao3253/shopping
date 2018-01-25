@@ -128,6 +128,208 @@
     width: 25%;
 }
    
+/* 新品上架 */
+.floor {
+    background-color: #fff;
+    margin-bottom: 16rpx;
+}
+.floor-header{
+    padding: 48rpx;
+}
+.floor-title {
+    float: left;
+    font-size: 38rpx;
+    line-height: 52rpx;
+    color: #111;
+}
+.visit-more {
+    float: right;
+    margin-top: 1rpx;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    color: #959595;
+    vertical-align: bottom;
+}
+
+.product-list--horizontal .product-list{
+    padding: 48rpx 64rpx; 
+    padding-right: 0;
+}
+.row-nowrap {
+    -webkit-overflow-scrolling: touch;
+    /* display: block; */
+      /* overflow-x: auto;   */
+     overflow-y: hidden;   
+    position: relative;
+    white-space: nowrap;
+}
+.product-list--horizontal .product-item {
+    width: 240rpx;
+    display: inline-block;
+    margin-right: 24rpx;
+    vertical-align: top;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.product-image {
+    display: block;
+    width: 100%;
+    position: relative;
+    padding-bottom: 100%;
+    margin-bottom: 24rpx;
+}
+
+.background-image {
+    background-color: hsla(233,7%,56%,.1);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ .product-name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    margin-bottom: 6rpx;
+    font-size: 30rpx;
+    line-height:42rpx;
+}
+.original-price{
+  font-size: 24rpx;
+  color: #959595;
+  text-decoration:line-through;
+}
+
+.product-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    margin-bottom: 6rpx;
+    font-size: 30rpx;
+    line-height:42rpx;
+    color: #111;
+}
+ .price-container {
+    margin: 16rpx 0;
+    line-height: 36rpx;
+}
+ .product-price {
+    font-size: 30rpx;
+}
+
+.product-price{
+    font-size: 30rpx;
+    font-weight: 600;
+    color: #e23737;
+}
+
+ .tags-container{
+    font-size: 20rpx;
+    line-height: 30rpx;
+    color: #fff;
+    overflow: hidden;
+}
+ .price-tag {
+    display: inline-block;
+    padding: 0 16rpx;
+    height: 30rpx;
+    background-color: #f68d08;
+    border-radius: 4rpx;
+}
+
+/* 玩物拼团 */
+.group-buying-list {
+    padding:48rpx;
+    background-color: #fff;
+}
+.group-buying-card {
+    padding: 24rpx 0;
+    font-size: 26rpx;
+    border-top: 1rpx solid #ccc;
+}
+/* .group-buying-card:after{
+    content:".";
+    clear:both;
+    display:block;
+    height:0;
+    overflow:hidden;
+    visibility:hidden;
+} */
+.product-images {
+    float: left;
+    width: 280rpx;
+    height: 280rpx;
+}
+.background-image {
+    background-color: hsla(233,7%,56%,.1);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.group-buying-card--right {
+    float: right;
+    width: 374rpx;
+    padding-left: 54rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.product-title {
+    margin-top: 16rpx;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.group-buying-member-list {
+    float: left;
+    height: 48rpx;
+    width: 48rpx;
+    margin-top: 12rpx;
+}
+.product-sold-count{
+    float: right;
+    color: #e23737;
+    line-height: 36rpx;
+    margin-top: 22rpx;
+}
+.group-buying__original-price{
+    clear: both;
+    margin-top: 48rpx;
+    font-size: 30rpx;
+    color: #959595;
+    line-height:36rpx;
+}
+.group-buying__discount-price {
+    float: left;
+    font-size: 48rpx;
+    line-height: 58rpx;
+    color: #e23737;
+}
+.group-buying-btn {
+    float: right;
+    padding: 12rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    color: #fff;
+    background-color: #e23737;
+}
+.line-slash{
+  text-decoration:line-through;
+}
+.group-buying-member-item {
+    display: inline-block;
+    width: 48rpx;
+    height: 48rpx;
+    border: 1rpx solid #fff;
+    border-radius: 50%;
+    margin-left: -24rpx;
+}
+
 
 
 
