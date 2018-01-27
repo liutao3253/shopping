@@ -242,7 +242,7 @@
 
 /* 玩物拼团 */
 .group-buying-list {
-    padding:48rpx;
+    padding:0 48rpx;
     background-color: #fff;
 }
 .group-buying-card {

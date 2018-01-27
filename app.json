@@ -1,10 +1,13 @@
 {
   "pages": [
+    "pages/product/detail/detail",
     "pages/home/home",
     "pages/cates/cates",
     "pages/cart/cart",
     "pages/user/user"
+  
   ],
+ 
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F27171",

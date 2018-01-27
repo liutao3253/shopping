@@ -63,6 +63,10 @@ Page({
         }
       }
     });
+   
+
+
+
     guaranteeList:[{
        'text':'正品保证'
     },{
@@ -158,6 +162,7 @@ Page({
       currentTab: e.detail.current+1
     })
   },
+
   // 关闭优惠券
   close(e){
     this.setData({

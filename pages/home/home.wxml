@@ -17,9 +17,8 @@
   </block>
   <swiper class="banner-swiper" circular="true"autoplay="{{autoplay}}"bindchange="intervalChange" >   
       <swiper-item wx:for="{{banners}}" class='swiper-item'>
-        <navigator url='../detail/detail?id={{item.productId}}'style="background-image:url({{item.image}})" class="slide-image">
-          <!-- <image src="{{item.image}}" class="slide-image"/> -->
-        </navigator> 
+        <navigator wx:if='{{item.product}}'url='../product/detail/detail?product={{item.product}}'style="background-image:url({{item.image}})" class="slide-image"> </navigator> 
+        <navigator wx:else url='../../pages/home/home' style="background-image:url({{item.image}})" class="slide-image" ></navigator> 
       </swiper-item>
   </swiper> 
   <!-- 计数器 -->
